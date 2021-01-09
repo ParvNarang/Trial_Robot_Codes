@@ -1,3 +1,7 @@
+/*  
+ *   Developer: Parv Narang
+*/
+
 int pwm_speedA = 150;
 int pwm_speedB = 145;
 int bed;
@@ -70,8 +74,7 @@ void loop() {
               left();  
               }
               break;
-              
-              
+          
               //Serial.print(   count);
              
               }
@@ -84,23 +87,13 @@ void loop() {
               break;
               
             }
-            
-          
-          
-             
-          
-
-          
-        
       }
     }
   }
 
-  
-
-
 }
 }
+
 void forward(){
   digitalWrite(10, HIGH);
   digitalWrite(11, LOW);
@@ -122,9 +115,11 @@ void backward(){
 
   analogWrite(5, 100);
   analogWrite(3, 100);
+  
 }
 
 void left(){
+  
   digitalWrite(11, LOW);
   digitalWrite(10, HIGH);
   
@@ -133,12 +128,13 @@ void left(){
 
   analogWrite(3,150);
   analogWrite(5, 150);
+  
 }
 
 void right(){
+  
   digitalWrite(10, LOW);
   digitalWrite(11, LOW);
-  
   
   digitalWrite(9, HIGH);
   digitalWrite(6, LOW);
@@ -158,6 +154,7 @@ void stop(){
 
   analogWrite(5, 0);
   analogWrite(3, 0);
+  
 }
 void turn() {
   
@@ -174,6 +171,7 @@ void turn() {
 
 
 void lfr(){
+  
   if(digitalRead(2) == HIGH && digitalRead(7) == HIGH && digitalRead(4) == LOW && digitalRead(12) == HIGH && digitalRead(13) == HIGH){
   forward();
   }
@@ -207,8 +205,7 @@ void lfr(){
   else if(digitalRead(2) == HIGH && digitalRead(7) == HIGH && digitalRead(4) == HIGH && digitalRead(12) == LOW && digitalRead(13) == HIGH){
   left();
   }
-  
-
-
-
+  else{
+    
+  }
 }
